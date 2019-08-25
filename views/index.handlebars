@@ -1,0 +1,24 @@
+<h1>eat da burger</h1>
+
+<ul>
+    {{#each burgers}}
+        <li>{{this.burger_name}}
+
+	<button class="change-status" data-id="{{id}}" data-newStatus="{{devoured}}">
+		{{#unless devoured}}eat me!!!!{{/unless}}
+	</button>
+
+
+        </li>
+    {{/each}}
+</ul>
+
+<h2>create your burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burger">burger name:</label>
+    <input type="text" id="burger" name="name">
+  </div>
+  <button type="submit">add burger</button>
+</form>

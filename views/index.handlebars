@@ -1,11 +1,15 @@
+<div class="devoured"></div>
 <h1>eat da burger</h1>
 
 <ul>
     {{#each burgers}}
-        <li>{{this.burger_name}}
+        <li data-id="{{id}}" class="move">{{this.id}}- {{this.burger_name}}
 
-	<button class="change-status" data-id="{{id}}" data-newStatus="{{devoured}}">
-		{{#unless devoured}}eat me!!!!{{/unless}}
+	<button class="change-status" data-id="{{id}}">
+		{{#if devoured}}
+        {{else}}
+            eat me!!!
+        {{/if}}
 	</button>
 
 
@@ -20,5 +24,13 @@
     <label for="burger">burger name:</label>
     <input type="text" id="burger" name="name">
   </div>
+
+    {{!-- <div class="form-group">
+    <label for="devoured">devoured?</label><br>
+    <input class="radio" type="radio" name="devoured" value="1" checked> devoured<br>
+    <input class="radio"    type="radio" name="devoured" value="0"> not devoured
+  </div>
+ --}}
   <button type="submit">add burger</button>
+
 </form>

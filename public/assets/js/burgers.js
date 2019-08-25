@@ -12,7 +12,6 @@ $(".create-form").on("submit", function(event) {
       data: newBurger
     }).then(
       function() {
-        console.log("created new burger");
         // Reload the page to get the updated list
         location.reload();
       }
@@ -20,11 +19,10 @@ $(".create-form").on("submit", function(event) {
   });
   
   $(".change-status").on("click", function(event) {
-    var id = $(this).data("id");
-    var newStatus = $(this).data("newStatus");
 
+    var id = $(this).data("id");
     var newDevouredState = {
-      devoured: newStatus
+      devoured: 1
     };
 
     $.ajax("/api/burgers/" + id, {
@@ -32,9 +30,10 @@ $(".create-form").on("submit", function(event) {
       data: newDevouredState
     }).then(
       function() {
-        console.log("changed status to", newStatus);
+        $('.move[data-id='+id+']').appendTo(".devoured");
+
         // Reload the page to get the updated list
-        location.reload();
+        // location.reload();
       }
     );
   });

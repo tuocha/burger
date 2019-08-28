@@ -1,4 +1,29 @@
+body {
+    background-color: darkkhaki;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, form, h2 {
+    margin-left: 10%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36pt;
+}
+
+img {
+    margin-left: 42%;
+}
+
+button {
+    color: white;
+    background-color: rgb(223, 0, 0)
+}
+
 .devoured {
+    margin-right: 10%;
+    margin-top: 18%;
     float: right;
     height: 400px;
     width: 400px;

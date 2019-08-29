@@ -1,28 +1,29 @@
 <h1>eat da burger</h1>
 <img src="assets/images/burger.png">
 <div class="devoured">
-  {{#if devoured}}
   {{#each burgers}}
+
+  {{#if devoured}}
   <li data-id="{{id}}" class="move">{{this.id}}- {{this.burger_name}}
-    {{/each}}
-    {{/if}}
+    <button class="change-status" data-id="{{id}}">eat me!!</button>
+  </li>
+      {{/if}}
+
+      {{/each}}
 </div>
 
 <div>
   <ul>
-    {{#unless devoured}}
     {{#each burgers}}
+    {{#unless devoured}}
 
     <li data-id="{{id}}" class="move">{{this.id}}- {{this.burger_name}}
       <button class="change-status" data-id="{{id}}">eat me!!
-        {{!-- {{#if devoured}}
-        {{else}}
-            eat me!!!
-        {{/if}} --}}
       </button>
     </li>
-    {{/each}}
     {{/unless}}
+
+    {{/each}}
   </ul>
 </div>
 

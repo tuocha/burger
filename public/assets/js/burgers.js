@@ -22,7 +22,7 @@ $(".create-form").on("submit", function(event) {
 
     var id = $(this).data("id");
     var newDevouredState = {
-      devoured: 1
+      devoured: 0
     };
 
     $.ajax("/api/burgers/" + id, {
@@ -30,10 +30,10 @@ $(".create-form").on("submit", function(event) {
       data: newDevouredState
     }).then(
       function() {
-        $('.move[data-id='+id+']').appendTo(".devoured");
+        // $('.move[data-id='+id+']').appendTo(".devoured");
 
         // Reload the page to get the updated list
-        // location.reload();
+        location.reload();
       }
     );
   });
